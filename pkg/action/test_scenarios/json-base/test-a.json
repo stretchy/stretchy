@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "a_property": "e0a6877f-f62a-4cd8-9ca9-656a3a4a0fe5",
+    "template_prop": "A9201516-B322-49B2-A284-5186FA43A306",
+    "another_prop": "d82c950f-ebf5-4aa9-822e-992da5ecc69e"
+  },
+  "settings": {
+    "a_setting": "a",
+    "another_setting": 2,
+    "third_setting": "asd"
+  }
+}

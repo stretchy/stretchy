@@ -1,0 +1,20 @@
+mappings:
+  properties:
+    email:
+      type: keyword
+    full_name:
+      type: text
+    bio:
+      type: text
+    age:
+      type: integer
+    location:
+      type: geo_point
+    created_at:
+      type: date
+      format: date_time
+settings:
+  index:
+    number_of_shards: '5'
+    max_result_window: '100000'
+    number_of_replicas: '1'

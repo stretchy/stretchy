@@ -1,0 +1,15 @@
+{
+	"name": "Go",
+	"dockerComposeFile": "docker-compose.yml",
+	"workspaceFolder": "/srv",
+	"shutdownAction": "stopCompose",
+	"service": "devcontainer",
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"go.gopath": "/go"
+	},
+	"remoteUser": "root",
+	"extensions": [
+		"ms-vscode.go"
+	]
+}

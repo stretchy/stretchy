@@ -1,0 +1,4 @@
+mappings:
+  field: bf0a1a2a-e1a2-4ad9-8b46-d8a7f3a12370
+settings:
+{{ include "settings.default" . | nindent 4 }}

@@ -1,0 +1,50 @@
+version: '3'
+services:
+    devcontainer:
+        build: .
+        volumes:
+            - ..:/srv
+            - /var/run/docker.sock:/var/run/docker.sock
+        command: sleep infinity
+        cap_add:
+            - SYS_PTRACE
+        security_opt:
+            - seccomp:unconfined
+        environment:
+            ELASTICSEARCH_HOST: http://elasticsearch_v7:9200
+            TEST_ELASTICSEARCH_HOST_v6: http://elasticsearch_v6:9200
+            TEST_ELASTICSEARCH_HOST_v7: http://elasticsearch_v7:9200
+
+    elasticsearch_v6:
+        container_name: elasticsearch_v6
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.8.6
+        restart: unless-stopped
+        ports:
+            - 9206:9200
+        healthcheck:
+            test: ["CMD", "curl", "--silent", "--fail", "http://localhost:9200/_cluster/health"]
+            interval: 5s
+            timeout: 2s
+            retries: 12
+        environment:
+            cluster.name: elasticsearch_v6
+            discovery.type: single-node
+            xpack.security.enabled: "false"
+
+    elasticsearch_v7:
+        container_name: elasticsearch_v7
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
+        restart: unless-stopped
+        ports:
+            - 9207:9200
+        healthcheck:
+            test: ["CMD", "curl", "--silent", "--fail", "http://localhost:9200/_cluster/health"]
+            interval: 5s
+            timeout: 2s
+            retries: 12
+        environment:
+            cluster.name: elasticsearch_v7
+            bootstrap.memory_lock: "true"
+            discovery.type: single-node
+            xpack.license.self_generated.type: trial
+            xpack.security.enabled: "false"

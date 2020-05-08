@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Lint Go Code
+        uses: docker://golangci/golangci-lint:v1.26-alpine
+        with:
+          args: golangci-lint run -v
+
+  test:
+    name: Test Suite
+    runs-on: ubuntu-latest
+    services:
+      es6:
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.8.6
+        options: --health-cmd="curl --silent --fail localhost:9200/_cluster/health || exit 1" --health-interval=5s --health-retries=12 --health-timeout=2s
+        env:
+          cluster.name: elasticsearch_v6
+          discovery.type: single-node
+          xpack.security.enabled: "false"
+        ports:
+          - 9206:9200
+      es7:
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
+        options: --health-cmd="curl --silent --fail localhost:9200/_cluster/health || exit 1" --health-interval=5s --health-retries=12 --health-timeout=2s
+        env:
+          cluster.name: elasticsearch_v7
+          bootstrap.memory_lock: true
+          discovery.type: single-node
+          xpack.license.self_generated.type: trial
+          xpack.security.enabled: "false"
+        ports:
+          - 9207:9200
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup GO
+        uses: actions/setup-go@v2
+        with:
+          go-version: '^1.14.2'
+
+      - name: unit tests
+        run: make test-unit
+
+      - name: integration tests
+        run: make test-integration
+        env:
+          TEST_ELASTICSEARCH_HOST_v6: "http://localhost:9206"
+          TEST_ELASTICSEARCH_HOST_v7: "http://localhost:9207"
+
+      - name: upload test coverage
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage-*.out
+          flags: unit,integration

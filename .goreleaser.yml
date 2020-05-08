@@ -1,0 +1,30 @@
+before:
+  hooks:
+    - go mod download
+builds:
+- env:
+  - CGO_ENABLED=0
+  main: ./cmd/main.go
+archives:
+- replacements:
+    darwin: Darwin
+    linux: Linux
+    windows: Windows
+    386: i386
+    amd64: x86_64
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
+dockers:
+  - image_templates:
+    - 'docker.pkg.github.com/stretchy/stretchy/stretchy:v{{ .Major }}'
+    - 'docker.pkg.github.com/stretchy/stretchy/stretchy:v{{ .Major }}.{{ .Minor }}'
+    - "docker.pkg.github.com/stretchy/stretchy/stretchy:{{ .Tag }}"
+    - "docker.pkg.github.com/stretchy/stretchy/stretchy:latest"

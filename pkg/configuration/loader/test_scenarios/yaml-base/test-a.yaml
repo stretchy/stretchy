@@ -1,0 +1,6 @@
+mappings:
+  a_property: e0a6877f-f62a-4cd8-9ca9-656a3a4a0fe5
+  template_prop: {{ include "myCustomUuid" . }}
+  another_prop: "d82c950f-ebf5-4aa9-822e-992da5ecc69e"
+settings:
+{{ include "settings.default" . | nindent 4 }}

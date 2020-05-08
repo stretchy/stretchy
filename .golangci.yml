@@ -1,0 +1,51 @@
+run:
+  tests: true
+
+linters:
+  enable:
+    - bodyclose
+    - deadcode
+    - depguard
+    - dogsled
+    - dupl
+    - errcheck
+    - funlen
+    - gochecknoglobals
+    - gochecknoinits
+    - gocognit
+    - goconst
+    - gocritic
+    - gocyclo
+    - godox
+    - gofmt
+    - golint
+    - gomnd
+    - goprintffuncname
+    - gosec
+    - govet
+    - ineffassign
+    - lll
+    - maligned
+    - misspell
+    - nakedret
+    - prealloc
+    - rowserrcheck
+    - scopelint
+    - staticcheck
+    - structcheck
+    - stylecheck
+    - typecheck
+    - unconvert
+    - unparam
+    - varcheck
+    - whitespace
+    - wsl
+  disable:
+    - goimports # disabled since it generates conflict with gofmt
+    - gosimple # deprecated, use staticcheck instead
+    - interfacer # deprecated, no replacement suggested
+    - unused # deprecated, use staticcheck instead
+  fast: false
+linters-settings:
+  funlen:
+    lines: 80
