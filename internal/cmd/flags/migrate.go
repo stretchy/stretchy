@@ -6,7 +6,7 @@ func MigrateOptions() []cli.Flag {
 	return []cli.Flag{
 		&cli.BoolFlag{
 			Name:    "enable-soft-update",
-			Usage:   "Allow index index update whenever it's possible",
+			Usage:   "Enable inplace remapping whenever it's possible",
 			EnvVars: []string{"ENABLE_SOFT_UPDATE"},
 			Value:   true,
 		},
