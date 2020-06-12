@@ -7,7 +7,7 @@ require (
 	github.com/Masterminds/semver v1.5.0
 	github.com/Masterminds/sprig/v3 v3.1.0
 	github.com/imdario/mergo v0.3.8
-	github.com/olivere/elastic v6.2.32+incompatible
+	github.com/olivere/elastic v6.2.33+incompatible
 	github.com/olivere/elastic/v7 v7.0.16
 	github.com/pkg/errors v0.9.1
 	github.com/r3labs/diff v1.1.0
