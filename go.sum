@@ -48,6 +48,8 @@ github.com/olivere/elastic v6.2.31+incompatible h1:zwJIIsgfiDBuDS3sb6MCbm/e03BPE
 github.com/olivere/elastic v6.2.31+incompatible/go.mod h1:J+q1zQJTgAz9woqsbVRqGeB5G1iqDKVBWLNSYW8yfJ8=
 github.com/olivere/elastic v6.2.32+incompatible h1:xieFzqQcQzxMmP5fb8LP+Ayk6Ap02fs72EO5/wEjCuE=
 github.com/olivere/elastic v6.2.32+incompatible/go.mod h1:J+q1zQJTgAz9woqsbVRqGeB5G1iqDKVBWLNSYW8yfJ8=
+github.com/olivere/elastic v6.2.33+incompatible h1:SRPB2w2OhJ7iULftDEHsNPRoL2GLREqPMRalVmbZaEw=
+github.com/olivere/elastic v6.2.33+incompatible/go.mod h1:J+q1zQJTgAz9woqsbVRqGeB5G1iqDKVBWLNSYW8yfJ8=
 github.com/olivere/elastic/v7 v7.0.15 h1:v7kX5S+oMFfYKS4ZyzD37GH6lfZSpBo9atynRwBUywE=
 github.com/olivere/elastic/v7 v7.0.15/go.mod h1:+FgncZ8ho1QF3NlBo77XbuoTKYHhvEOfFZKIAfHnnDE=
 github.com/olivere/elastic/v7 v7.0.16 h1:cW6Lba7NeJZWAVXIqN16n08drsBzhLIcXHDZbjT5eWc=
