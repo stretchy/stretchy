@@ -56,6 +56,8 @@ github.com/olivere/elastic/v7 v7.0.17 h1:VMHAc164MH85MIOyyyL6AAzIDixsdjIdAfmKotx
 github.com/olivere/elastic/v7 v7.0.17/go.mod h1:sd6x2HP229aT2+U2261gUUMCD4RVf/Nsso8HxSgcjDs=
 github.com/olivere/elastic/v7 v7.0.18 h1:uMw4RKozi/v40hyffz/klgiSlTAbTzSCDS3Sfrx8EBY=
 github.com/olivere/elastic/v7 v7.0.18/go.mod h1:4Jqt5xvjqpjCqgnTcHwl3j8TLs8mvoOK8NYgo/qEOu4=
+github.com/olivere/elastic/v7 v7.0.19 h1:w4F6JpqOISadhYf/n0NR1cNj73xHqh4pzPwD1Gkidts=
+github.com/olivere/elastic/v7 v7.0.19/go.mod h1:4Jqt5xvjqpjCqgnTcHwl3j8TLs8mvoOK8NYgo/qEOu4=
 github.com/opentracing/opentracing-go v1.1.0/go.mod h1:UkNAQd3GIcIGf0SeVgPpRdFStlNbqXla1AfSYxPUl2o=
 github.com/opentracing/opentracing-go v1.2.0/go.mod h1:GxEUsuufX4nBwe+T+Wl9TAgYrxe9dPLANfrWvHYVTgc=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
