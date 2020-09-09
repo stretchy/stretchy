@@ -11,6 +11,7 @@ const charset = "abcdefghijklmnopqrstuvwxyz" +
 func RandomString(length int) string {
 	b := make([]byte, length)
 
+	//nolint:gosec
 	seededRand := rand.New(rand.NewSource(time.Now().UnixNano()))
 
 	for i := range b {
