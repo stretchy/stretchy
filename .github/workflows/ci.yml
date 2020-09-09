@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Lint Go Code
-        uses: docker://golangci/golangci-lint:v1.26-alpine
+        uses: docker://golangci/golangci-lint:v1.31-alpine
         with:
           args: golangci-lint run -v
 
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       es6:
-        image: docker.elastic.co/elasticsearch/elasticsearch:6.8.6
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.8.12
         options: --health-cmd="curl --silent --fail localhost:9200/_cluster/health || exit 1" --health-interval=5s --health-retries=12 --health-timeout=2s
         env:
           cluster.name: elasticsearch_v6
@@ -33,7 +33,7 @@ jobs:
         ports:
           - 9206:9200
       es7:
-        image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.9.1
         options: --health-cmd="curl --silent --fail localhost:9200/_cluster/health || exit 1" --health-interval=5s --health-retries=12 --health-timeout=2s
         env:
           cluster.name: elasticsearch_v7
@@ -50,7 +50,7 @@ jobs:
       - name: Setup GO
         uses: actions/setup-go@v2
         with:
-          go-version: '^1.14.2'
+          go-version: 1.15
 
       - name: unit tests
         run: make test-unit
