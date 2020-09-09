@@ -2,9 +2,7 @@ package elasticsearch
 
 import (
 	"context"
-	"crypto/tls"
 	"fmt"
-	"net/http"
 
 	"github.com/olivere/elastic/v7"
 	"github.com/stretchy/stretchy/pkg/configuration"
@@ -36,15 +34,6 @@ func newOlivereV7(
 		elastic.SetURL(options.Host),
 		elastic.SetSniff(false),
 		elastic.SetHealthcheck(false),
-		elastic.SetHttpClient(
-			&http.Client{
-				Transport: &http.Transport{
-					TLSClientConfig: &tls.Config{
-						InsecureSkipVerify: false,
-					},
-				},
-			},
-		),
 	}
 
 	if options.User != "" && options.Password != "" {
