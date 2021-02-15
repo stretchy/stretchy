@@ -11,7 +11,7 @@ require (
 	github.com/olivere/elastic/v7 v7.0.22
 	github.com/pkg/errors v0.9.1
 	github.com/r3labs/diff v1.1.0
-	github.com/stretchr/testify v1.6.1
+	github.com/stretchr/testify v1.7.0
 	github.com/urfave/cli/v2 v2.3.0
 	gopkg.in/yaml.v3 v3.0.0-20200605160147-a5ece683394c
 )
