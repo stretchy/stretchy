@@ -22,6 +22,9 @@ changelog:
     exclude:
     - '^docs:'
     - '^test:'
+    - '^Merge pull request'
+    - '^Merge branch'
+    - '^go mod tidy'
 dockers:
   - image_templates:
     - 'docker.pkg.github.com/stretchy/stretchy/stretchy:v{{ .Major }}'
